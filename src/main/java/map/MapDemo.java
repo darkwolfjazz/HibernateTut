@@ -51,10 +51,18 @@ public  static void main(String[] args){
   //session
     Session session=factory.openSession();
     Transaction transaction=session.beginTransaction();
-     session.save(question1);
-     session.save(answer1);
-     session.save(answer2);
-     session.save(answer3);
+   //session.save(question1);
+//     session.save(answer1);
+//     session.save(answer2);
+//     session.save(answer3);
+
+
+
+    Question q =(Question)session.get(Question.class,1212);
+    System.out.println(q.getQuestion_id());
+    System.out.println(q.getQuestion());
+
+
     transaction.commit();
 
     //Fetching data
